@@ -1,0 +1,42 @@
+{
+  "name": "cloude-agent-panel",
+  "version": "0.1.0",
+  "description": "A local agent orchestration panel: unified web console for AI agents running on your machine (Claude Code first, Cursor CLI / Codex / agy planned).",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently --kill-others \"npm run server:dev\" \"npm run client\"",
+    "server:dev": "tsx watch server/index.ts",
+    "client": "vite",
+    "build": "vite build",
+    "start": "cross-env NODE_ENV=production tsx server/index.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p server/tsconfig.json"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.1.0",
+    "better-sqlite3": "^12.6.2",
+    "chokidar": "^4.0.3",
+    "express": "^4.18.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^10.1.0",
+    "ws": "^8.14.2"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.19.7",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@types/ws": "^8.18.1",
+    "@vitejs/plugin-react": "^4.6.0",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.2.2",
+    "cross-env": "^10.1.0",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.0.4"
+  }
+}
